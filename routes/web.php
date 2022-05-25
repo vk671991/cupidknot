@@ -26,5 +26,5 @@ Route::get('auth/google/callback', [SocialiteController::class, 'handleCallback'
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('admin', [HomeController::class, 'index'])->name('admin.home');
+Route::get('admin', [HomeController::class, 'index'])->name('admin.home')->middleware('is_admin');
 
